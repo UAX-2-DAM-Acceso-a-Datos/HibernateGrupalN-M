@@ -1,16 +1,18 @@
 package dto;
 
+import java.util.List;
+
 public class VehiculoDTO {
 	private String matricula ;
 	private String marca;
 	private String modelo;
-	private List<RespuestosDTO> listaRespuestos;
+	private List<RepuestosDTO> listaRepuestos;
 	
 	public VehiculoDTO() {
 		
 	}
 
-	public VehiculoDTO(String matricula, String marca, String modelo, List<RespuestosDTO> listaRespuestos) {
+	public VehiculoDTO(String matricula, String marca, String modelo, List<RepuestosDTO> listaRespuestos) {
 		super();
 		this.matricula = matricula;
 		this.marca = marca;
@@ -49,12 +51,12 @@ public class VehiculoDTO {
 		this.modelo = modelo;
 	}
 
-	public List<RespuestosDTO> getListaRespuestos() {
-		return listaRespuestos;
+	public List<RepuestosDTO> getListaRepuestos() {
+		return listaRepuestos;
 	}
 
-	public void setListaRespuestos(List<RespuestosDTO> listaRespuestos) {
-		this.listaRespuestos = listaRespuestos;
+	public void setListaRespuestos(List<RepuestosDTO> listaRespuestos) {
+		this.listaRepuestos = listaRepuestos;
 	}
 
 	@Override
