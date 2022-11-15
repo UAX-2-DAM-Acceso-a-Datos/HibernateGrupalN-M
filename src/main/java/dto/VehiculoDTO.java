@@ -17,7 +17,7 @@ public class VehiculoDTO {
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
-		this.listaRespuestos = listaRespuestos;
+		this.listaRepuestos = listaRespuestos;
 	}
 
 	public VehiculoDTO(String matricula, String marca, String modelo) {
