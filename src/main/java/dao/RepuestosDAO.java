@@ -2,15 +2,27 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
+
 import dto.RepuestosDTO;
 import idao.IRepuestos;
+import utils.HibernateUtils;
 
 public class RepuestosDAO implements IRepuestos {
 
 	@Override
 	public boolean updateRepuestos(RepuestosDTO r) {
-		// TODO Auto-generated method stub
-		return false;
+				//Creas sesion 
+				Session session = HibernateUtils.getSessionFactory().openSession();
+				//abres transaccion
+				session.beginTransaction();
+				//guardas vehiculo
+				session.save(r);
+				//comiteas
+				session.getTransaction().commit();
+				//cierra sesion
+				session.close();
+				return true;
 	}
 
 	@Override
