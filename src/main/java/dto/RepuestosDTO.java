@@ -1,13 +1,12 @@
 package dto;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class RepuestosDTO {
 
 	private int id;
 	private String nombre;
 	private String descripcion;
-	private ArrayList<VehiculoDTO> vehiculos;
+	private List<VehiculoDTO> vehiculos;
 	
 	public RepuestosDTO() {
 	}
@@ -19,7 +18,7 @@ public class RepuestosDTO {
 		this.descripcion = descripcion;
 	}
 
-	public RepuestosDTO(int id, String nombre, String descripcion, ArrayList<VehiculoDTO> vehiculos) {
+	public RepuestosDTO(int id, String nombre, String descripcion, List<VehiculoDTO> vehiculos) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -51,11 +50,11 @@ public class RepuestosDTO {
 		this.descripcion = descripcion;
 	}
 
-	public ArrayList<VehiculoDTO> getVehiculos() {
+	public List<VehiculoDTO> getVehiculos() {
 		return vehiculos;
 	}
 
-	public void setVehiculos(ArrayList<VehiculoDTO> vehiculos) {
+	public void setVehiculos(List<VehiculoDTO> vehiculos) {
 		this.vehiculos = vehiculos;
 	}
 

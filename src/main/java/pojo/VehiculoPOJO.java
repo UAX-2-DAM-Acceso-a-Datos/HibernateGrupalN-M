@@ -1,6 +1,7 @@
 package pojo;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class VehiculoPOJO {
 	private String marca;
 	
 	@Column(name = "repuestos")
-	private ArrayList<RepuestosPOJO> repuestos;
+	private List<RepuestosPOJO> repuestos;
 
 	public String getMatricula() {
 		return matricula;
@@ -48,11 +49,11 @@ public class VehiculoPOJO {
 		this.marca = marca;
 	}
 
-	public ArrayList getRepuestos() {
+	public List<RepuestosPOJO> getRepuestos() {
 		return repuestos;
 	}
 
-	public void setRepuestos(ArrayList<RepuestosPOJO> repuestos) {
+	public void setRepuestos(List<RepuestosPOJO> repuestos) {
 		this.repuestos = repuestos;
 	}
 
