@@ -29,7 +29,7 @@ public class VehiculoDAO implements IVehiculo {
 	@Override
 	public boolean deleteVehiculo(VehiculoDTO v) {
 		
-		//Habria que introducir un valor int ya que sino no se podria eliminar por id
+		
 		
 		
 		// TODO Auto-generated method stub
