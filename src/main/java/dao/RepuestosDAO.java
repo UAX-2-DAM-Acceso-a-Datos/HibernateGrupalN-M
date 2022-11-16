@@ -2,8 +2,12 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
+
 import dto.RepuestosDTO;
+import dto.VehiculoDTO;
 import idao.IRepuestos;
+import utils.HibernateUtils;
 
 public class RepuestosDAO implements IRepuestos {
 
@@ -27,8 +31,15 @@ public class RepuestosDAO implements IRepuestos {
 
 	@Override
 	public List<RepuestosDTO> listarRespuestos() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session= HibernateUtils.getSessionFactory().openSession();
+		session.beginTransaction();
+		List<RepuestosDTO>listarepuesto=session.createQuery("from cuentas").list();
+		for (RepuestosDTO repuestos : listarepuesto) {
+			System.out.println(repuestos);
+			
+		}
+		
+		return listarepuesto;
 	}
 
 }
