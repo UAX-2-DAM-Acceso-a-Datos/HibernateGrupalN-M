@@ -10,7 +10,6 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 import dto.VehiculoDTO;
-import entities.Cuenta;
 import idao.IVehiculo;
 import utils.HibernateUtils;
 
