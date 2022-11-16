@@ -23,7 +23,14 @@ public class RepuestosDAO implements IRepuestos {
 	@Override
 	public boolean eliminarRepuestos(RepuestosDTO r) {
 		// TODO Auto-generated method stub
-		return false;
+		Session session = HibernateUtils.getSessionFactory().openSession();
+		session.createQuery("DELETE FROM vehiculos WHERE" + r.getId());
+		
+		session.beginTransaction();
+		
+		System.out.println("El repuesto ha sido eliminado");
+		session.close();
+		return true;
 	}
 
 	@Override
