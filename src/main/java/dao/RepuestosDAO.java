@@ -12,7 +12,7 @@ import utils.HibernateUtils;
 public class RepuestosDAO implements IRepuestos {
 
 	@Override
-	public boolean updateRepuestos(RepuestosDTO r) {
+	public boolean addRepuestos(RepuestosDTO r) {
 				//Creas sesion 
 				Session session = HibernateUtils.getSessionFactory().openSession();
 				//abres transaccion
@@ -24,18 +24,30 @@ public class RepuestosDAO implements IRepuestos {
 				//cierra sesion
 				session.close();
 				return true;
+
 	}
 
 	@Override
 	public boolean eliminarRepuestos(RepuestosDTO r) {
 		// TODO Auto-generated method stub
-		return false;
+		Session session = HibernateUtils.getSessionFactory().openSession();
+		session.createQuery("DELETE FROM vehiculos WHERE" + r.getId());
+		
+		session.beginTransaction();
+		
+		System.out.println("El repuesto ha sido eliminado");
+		session.close();
+		return true;
 	}
 
 	@Override
 	public boolean modificarRepuestos(RepuestosDTO r) {
-		// TODO Auto-generated method stub
-		return false;
+		Session session = HibernateUtils.getSessionFactory().openSession();// Abrir sesion
+		session.update(r); // Update Vehiculo
+		session.beginTransaction().commit();// commit del Update 
+		session.close();
+		
+		return true;
 	}
 
 	@Override
