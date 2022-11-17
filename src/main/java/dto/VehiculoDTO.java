@@ -13,7 +13,6 @@ public class VehiculoDTO {
 	}
 
 	public VehiculoDTO(String matricula, String marca, String modelo, List<RepuestosDTO> listaRespuestos) {
-		super();
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -21,7 +20,6 @@ public class VehiculoDTO {
 	}
 
 	public VehiculoDTO(String matricula, String marca, String modelo) {
-		super();
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -55,7 +53,7 @@ public class VehiculoDTO {
 		return listaRepuestos;
 	}
 
-	public void setListaRespuestos(List<RepuestosDTO> listaRespuestos) {
+	public void setListaRespuestos(List<RepuestosDTO> listaRepuestos) {
 		this.listaRepuestos = listaRepuestos;
 	}
 

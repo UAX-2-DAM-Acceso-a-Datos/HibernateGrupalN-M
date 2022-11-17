@@ -6,9 +6,9 @@
         
         <!-- Datos de conexión con la base de datos- Driver, URL, user, password -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/accesodatos</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password"></property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernatenm</property>
+        <property name="connection.username">rafa</property>
+        <property name="connection.password">rafa</property>
 
         <!-- Tamaño de la Connection Pool-->
         <property name="connection.pool_size">1</property>
@@ -29,7 +29,8 @@
          <!-- <property name="hbm2ddl.auto">create</property>-->
 		
 		<!-- Clases que contienen las anotaciones de mapeo -->
-       <!-- <mapping class="entities.XXXXX" />-->
+       <mapping class="pojo.VehiculoPOJO" />
+       <mapping class="pojo.RepuestosPOJO" />
     </session-factory>
 
 </hibernate-configuration>

@@ -6,7 +6,10 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import dto.RepuestosDTO;
 
 @Table(name = "vehiculos")
 @Entity(name = "vehiculos")
@@ -22,8 +25,25 @@ public class VehiculoPOJO {
 	@Column(name = "marca")
 	private String marca;
 	
-	@Column(name = "repuestos")
+	@ManyToMany(mappedBy = "vehiculos")
 	private List<RepuestosPOJO> repuestos;
+	
+	public VehiculoPOJO() {
+		
+	}
+	
+	public VehiculoPOJO(String matricula, String marca, String modelo, List<RepuestosPOJO> repuestos) {
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.repuestos = repuestos;
+	}
+
+	public VehiculoPOJO(String matricula, String marca, String modelo) {
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+	}
 
 	public String getMatricula() {
 		return matricula;

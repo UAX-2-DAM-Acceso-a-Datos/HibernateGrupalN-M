@@ -12,14 +12,12 @@ public class RepuestosDTO {
 	}
 
 	public RepuestosDTO(int id, String nombre, String descripcion) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 	}
 
 	public RepuestosDTO(int id, String nombre, String descripcion, List<VehiculoDTO> vehiculos) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;

@@ -2,13 +2,17 @@ package pojo;
 
 import java.util.List;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import dto.VehiculoDTO;
 
 @Table(name="repuestos")
 @Entity(name="repuestos")
@@ -22,9 +26,29 @@ private String nombre;
 @Column(name="descripcion")
 private String descripcion;
 
-
+@ManyToMany
+@JoinTable(name = "vehiculos_repuestos", joinColumns = {@JoinColumn(name="id")}, 
+inverseJoinColumns = {@JoinColumn(name="matricula")})
 private List<VehiculoPOJO>	vehiculos;
 
+public RepuestosPOJO() {
+}
+public RepuestosPOJO(String nombre, String descripcion) {
+	this.nombre = nombre;
+	this.descripcion = descripcion;
+}
+
+public RepuestosPOJO(int id, String nombre, String descripcion) {
+	this.id = id;
+	this.nombre = nombre;
+	this.descripcion = descripcion;
+}
+public RepuestosPOJO(int id, String nombre, String descripcion, List<VehiculoPOJO> vehiculos) {
+	this.id = id;
+	this.nombre = nombre;
+	this.descripcion = descripcion;
+	this.vehiculos = vehiculos;
+}
 
 
 public int getId() {
