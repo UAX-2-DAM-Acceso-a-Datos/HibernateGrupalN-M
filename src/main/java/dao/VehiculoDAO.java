@@ -43,19 +43,14 @@ public class VehiculoDAO implements IVehiculo {
 
 	@Override
 	public boolean deleteVehiculo(VehiculoDTO v) {
-		
-		
-		
-		
 		// TODO Auto-generated method stub
 		Session session = HibernateUtils.getSessionFactory().openSession();
-		session.createQuery("DELETE FROM vehiculos WHERE" + v.getMatricula());
-		
 		session.beginTransaction();
-		
+		session.delete(v);
 		System.out.println("El vehiculo ha sido eliminado");
+		session.getTransaction().commit();
 		session.close();
-		return false;
+		return true;
 	}
 
 	@Override

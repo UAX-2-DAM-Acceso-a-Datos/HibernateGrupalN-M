@@ -31,11 +31,10 @@ public class RepuestosDAO implements IRepuestos {
 	public boolean eliminarRepuestos(RepuestosDTO r) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtils.getSessionFactory().openSession();
-		session.createQuery("DELETE FROM vehiculos WHERE" + r.getId());
-		
 		session.beginTransaction();
-		
+		session.delete(r);
 		System.out.println("El repuesto ha sido eliminado");
+		session.getTransaction().commit();
 		session.close();
 		return true;
 	}
