@@ -50,11 +50,11 @@ public class RepuestosDAO implements IRepuestos {
 	}
 
 	@Override
-	public List<RepuestosDTO> listarRespuestos() {
+	public List<RepuestosPOJO> listarRespuestos() {
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		List<RepuestosDTO>listarepuesto=session.createQuery("from cuentas").list();
-		for (RepuestosDTO repuestos : listarepuesto) {
+		List<RepuestosPOJO>listarepuesto=session.createQuery("from cuentas").list();
+		for (RepuestosPOJO repuestos : listarepuesto) {
 			System.out.println(repuestos);
 			
 		}

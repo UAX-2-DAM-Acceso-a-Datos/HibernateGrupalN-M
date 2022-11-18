@@ -1,11 +1,14 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 
+import dto.RepuestosDTO;
 import dto.VehiculoDTO;
 import idao.IVehiculo;
+import pojo.RepuestosPOJO;
 import pojo.VehiculoPOJO;
 import utils.HibernateUtils;
 
@@ -50,14 +53,27 @@ public class VehiculoDAO implements IVehiculo {
 	}
 
 	@Override
-	public List<VehiculoDTO> listVehiculo() {
+	public List<VehiculoPOJO> listVehiculo() {
 		
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		List<VehiculoDTO>listavehiculos=session.createQuery("from vehiculos").list();
+		List<VehiculoPOJO>listavehiculos=session.createQuery("from vehiculos").list();
 		
 		return listavehiculos;
 		
+	}
+
+	@Override
+	public VehiculoPOJO listarRepuestoMatricula(String matricula) {
+		Session session= HibernateUtils.getSessionFactory().openSession();
+		session.beginTransaction();
+		List<VehiculoPOJO>listavehiculos=session.createQuery("from vehiculos").list();
+		for (int i = 0; i < listavehiculos.size(); i++) {
+			if (listavehiculos.get(i).getMatricula().equals(matricula)) {
+				return listavehiculos.get(i);
+			}
+		}
+		return null;
 	}
 
 
