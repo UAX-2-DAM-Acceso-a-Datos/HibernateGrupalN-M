@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 import dto.RepuestosDTO;
 
@@ -20,9 +23,11 @@ public class VehiculoPOJO {
 	private String matricula;
 	
 	@Column(name = "modelo")
+	@NotBlank
 	private String modelo;
 	
 	@Column(name = "marca")
+	@NotNull
 	private String marca;
 	
 	@ManyToMany(mappedBy = "vehiculos")
