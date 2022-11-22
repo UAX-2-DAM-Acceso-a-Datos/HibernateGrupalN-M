@@ -8,11 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
-import dto.RepuestosDTO;
+
 
 @Table(name = "vehiculos")
 @Entity(name = "vehiculos")
@@ -20,6 +21,7 @@ public class VehiculoPOJO {
 
 	@Id
 	@Column(name = "matricula")
+	@Pattern(regexp="(?i)^\\d{4}?[ -]*([A-Z]{3})$")
 	private String matricula;
 	
 	@Column(name = "modelo")
