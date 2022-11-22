@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import javax.validation.ConstraintViolationException;
+
 import org.hibernate.Session;
 
 import dto.VehiculoDTO;
@@ -13,6 +15,9 @@ public class VehiculoDAO implements IVehiculo {
 
 	@Override
 	public boolean addVehiculo(VehiculoPOJO v) {
+		try {
+			
+		
 		//Creas sesion 
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		//abres transaccion
@@ -23,6 +28,10 @@ public class VehiculoDAO implements IVehiculo {
 		session.getTransaction().commit();
 		//cierra sesion
 		session.close();
+		}catch(ConstraintViolationException cve) {
+			cve.printStackTrace();
+		}
+		
 		return true;
 	}
 
