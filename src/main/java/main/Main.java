@@ -15,7 +15,6 @@ public class Main {
 		//rDao.addRepuestos(rPojo);
 		//vDao.addVehiculo(vPojo);
 		System.out.println(vDao.listVehiculo());
-		System.out.println(vDao.listarRepuestoMatricula("234556"));
 		
 	}
 }

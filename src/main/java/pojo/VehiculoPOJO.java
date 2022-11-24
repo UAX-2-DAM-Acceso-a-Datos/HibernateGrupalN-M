@@ -3,8 +3,10 @@ package pojo;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -32,7 +34,7 @@ public class VehiculoPOJO {
 	@NotNull
 	private String marca;
 	
-	@ManyToMany(mappedBy = "vehiculos")
+	@ManyToMany(mappedBy = "vehiculos",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
 	private List<RepuestosPOJO> repuestos;
 	
 	public VehiculoPOJO() {
