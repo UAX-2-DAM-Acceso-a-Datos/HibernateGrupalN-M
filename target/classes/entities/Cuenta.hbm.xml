@@ -9,9 +9,4 @@
 		<property name="marca" type="string" column="marca"/>
 		<property name="repuestos" type="string" column="repuestos"/>
 	</class>
-	<class name="entities.RepuestosPOJO">
-		
-	</class>
-	
-	
 </hibernate-mapping>

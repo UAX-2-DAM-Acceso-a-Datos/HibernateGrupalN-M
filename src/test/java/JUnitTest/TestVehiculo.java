@@ -25,6 +25,17 @@ class TestVehiculo {
 			Assert.assertTrue(result); 
 			
 		}
+		
+		@Test
+		public void deleteVehiculoTest() {
+			VehiculoPOJO v1 = new VehiculoPOJO("23251JZZ","Peugeot","206");
+			VehiculoDAO v = new VehiculoDAO();
+			
+			v.addVehiculo(v1);
+			assertTrue(v.deleteVehiculo(v1));
+			
+			
+		}
 
 		}
 
