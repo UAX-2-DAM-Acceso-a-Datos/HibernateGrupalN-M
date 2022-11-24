@@ -1,9 +1,7 @@
 package JUnitTest;
 
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
-
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -21,7 +19,9 @@ class TestVehiculo {
 		
 		
 		Assert.assertTrue(vDAO.updateVehiculo(vPOJO));
+	}
 		
+		public void addVehiculo() {
 
 		
 			VehiculoDAO v1 = new VehiculoDAO();
@@ -30,7 +30,7 @@ class TestVehiculo {
 		
 			Assert.assertTrue(result); 
 			
-		
+		}
 
 		}
 
