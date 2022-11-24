@@ -54,15 +54,17 @@ public class RepuestosDAO implements IRepuestos {
 
 	@Override
 	public boolean modificarRepuestos(RepuestosPOJO r) {
+		logger.info("[REPUESTOS] Entra a metodo modificarRepuestos.");
+		try {
 		Session session = HibernateUtils.getSessionFactory().openSession();// Abrir sesion
 		session.update(r); // Update Vehiculo
+		logger.debug("[DEBUG] " + r);
 		session.beginTransaction().commit();// commit del Update 
 		session.close();
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
+		}catch(Exception e) {
+			logger.error("[ERROR] Error en modificarRepuestos " + e.getMessage());
+		}
+
 		return true;
 	}
 

@@ -43,16 +43,17 @@ public class VehiculoDAO implements IVehiculo {
 
 	@Override
 	public boolean updateVehiculo(VehiculoPOJO v) {
-		
+		logger.info("[Vehiculo] Entra al metodo updateVehiculo");
+		try {
 		Session session = HibernateUtils.getSessionFactory().openSession();// Abrir sesion
 		session.update(v); // Update Vehiculo
+		logger.debug("[DEBUG] " + v);
 		session.beginTransaction().commit();// commit del Update 
 		session.close();
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
+		}catch(Exception e) {
+			logger.error("[Error] Error en updateVehiuclo" + e.getMessage());
+		}
+        
 		return true;
 	}
 
