@@ -11,9 +11,7 @@ public class Main {
 		VehiculoDAO vDao = new VehiculoDAO();
 		RepuestosDAO rDao = new RepuestosDAO();
 
-		VehiculoPOJO vPojo = new VehiculoPOJO("2342JZH","peugeot","306");
-		RepuestosPOJO rPojo = new RepuestosPOJO("Repuesto","Repuetoprueba");
-		vDao.addVehiculo(vPojo);
+		
 		//rDao.addRepuestos(rPojo);
 		//vDao.addVehiculo(vPojo);
 		System.out.println(vDao.listVehiculo());

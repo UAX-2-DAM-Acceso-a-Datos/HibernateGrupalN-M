@@ -1,3 +1,10 @@
-C:\Users\German\eclipse-workspace\HibernateParte1\src\main\java\com\david\hibernateUtils\HibernateUtils.java
-C:\Users\German\eclipse-workspace\HibernateParte1\src\main\java\entities\Cuenta.java
-C:\Users\German\eclipse-workspace\HibernateParte1\src\main\java\mains\Ejemplo1.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\dto\RepuestosDTO.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\pojo\RepuestosPOJO.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\pojo\VehiculoPOJO.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\dao\VehiculoDAO.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\dao\RepuestosDAO.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\main\Main.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\utils\HibernateUtils.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\dto\VehiculoDTO.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\idao\IVehiculo.java
+D:\2ºaño\acceso a datos\eclipse workspace\HibernateGrupalN-M\src\main\java\idao\IRepuestos.java

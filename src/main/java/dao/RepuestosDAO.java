@@ -54,10 +54,7 @@ public class RepuestosDAO implements IRepuestos {
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		List<RepuestosPOJO>listarepuesto=session.createQuery("from cuentas").list();
-		for (RepuestosPOJO repuestos : listarepuesto) {
-			System.out.println(repuestos);
-			
-		}
+		
 		
 		return listarepuesto;
 	}
