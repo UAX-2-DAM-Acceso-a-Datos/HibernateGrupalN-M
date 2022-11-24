@@ -19,25 +19,25 @@ public class VehiculoDAO implements IVehiculo {
 	public boolean addVehiculo(VehiculoPOJO v) {
 		try {
 			
-		
+		logger.info("Entras al metodo de añadir vehiculo");
 		//Creas sesion 
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		//abres transaccion
 		session.beginTransaction();
 		//guardas vehiculo
+		logger.debug("Añades el el vehiculo"+v);
 		session.save(v);
 		//comiteas
+		
 		session.getTransaction().commit();
 		//cierra sesion
 		session.close();
+		logger.info("Sales del metodo y cierras la conexion");
 		}catch(ConstraintViolationException cve) {
 			cve.printStackTrace();
+			logger.error("Excepcion : "+cve.getMessage());
 		}
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
+        
 		return true;
 	}
 

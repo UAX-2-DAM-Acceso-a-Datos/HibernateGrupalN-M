@@ -16,21 +16,19 @@ public class RepuestosDAO implements IRepuestos {
 	
 	@Override
 	public boolean addRepuestos(RepuestosPOJO r) {
+		logger.info("Entras al metodo de añadir vehiculo");
 		//Creas sesion 
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		//abres transaccion
 		session.beginTransaction();
+		logger.debug("Añades el el vehiculo"+r);
 		//guardas vehiculo
 		session.save(r);
 		//comiteas
 		session.getTransaction().commit();
 		//cierra sesion
+		logger.info("Sales del metodo y cierras la conexion");
 		session.close();
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
 		return true;
 
 	}
