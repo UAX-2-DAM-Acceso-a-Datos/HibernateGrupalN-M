@@ -16,12 +16,12 @@ public class RepuestosDAO implements IRepuestos {
 	
 	@Override
 	public boolean addRepuestos(RepuestosPOJO r) {
-		logger.info("Entras al metodo de añadir vehiculo");
+		logger.info("Entras al metodo de añadir repuesto");
 		//Creas sesion 
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		//abres transaccion
 		session.beginTransaction();
-		logger.debug("Añades el el vehiculo"+r);
+		logger.debug("Añades el el repuestos"+r);
 		//guardas vehiculo
 		session.save(r);
 		//comiteas
