@@ -39,17 +39,24 @@ public class RepuestosDAO implements IRepuestos {
 	public boolean eliminarRepuestos(RepuestosPOJO r) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtils.getSessionFactory().openSession();
+		 logger.info("Esto es un mensaje info");
+		try {
 		session.beginTransaction();
 		session.delete(r);
 		System.out.println("El repuesto ha sido eliminado");
+		logger.debug(r);
 		session.getTransaction().commit();
 		session.close();
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
-		return true;
+       }
+		catch(Exception e){
+			logger.error("Error de logger");
+		
+		}finally {
+			
+			return true;
+		}
+        
+		
 	}
 
 	@Override

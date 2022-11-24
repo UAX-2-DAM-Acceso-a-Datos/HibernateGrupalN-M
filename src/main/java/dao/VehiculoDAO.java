@@ -61,17 +61,25 @@ public class VehiculoDAO implements IVehiculo {
 	public boolean deleteVehiculo(VehiculoPOJO v) {
 		// TODO Auto-generated method stub
 		Session session = HibernateUtils.getSessionFactory().openSession();
-		session.beginTransaction();
-		session.delete(v);
-		System.out.println("El vehiculo ha sido eliminado");
-		session.getTransaction().commit();
-		session.close();
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
-		return true;
+		try {
+			logger.info("Has entrado al metodo");
+			session.beginTransaction();
+			session.delete(v);
+			System.out.println("El vehiculo ha sido eliminado");
+			logger.debug(v);
+			session.getTransaction().commit();
+			session.close();
+	      
+	    
+		} catch (Exception e) {
+			// TODO: handle exception
+			logger.error("Error en el metodo");
+		}finally {
+			return true;
+		}
+		  
+		
+		
 	}
 
 	@Override
