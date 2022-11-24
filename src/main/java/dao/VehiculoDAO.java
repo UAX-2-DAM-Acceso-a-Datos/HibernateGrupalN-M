@@ -1,21 +1,20 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.ConstraintViolationException;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 
-import dto.RepuestosDTO;
-import dto.VehiculoDTO;
 import idao.IVehiculo;
-import pojo.RepuestosPOJO;
 import pojo.VehiculoPOJO;
 import utils.HibernateUtils;
 
 public class VehiculoDAO implements IVehiculo {
 
+    Logger logger = Logger.getLogger(VehiculoDAO.class);
+	
 	@Override
 	public boolean addVehiculo(VehiculoPOJO v) {
 		try {
@@ -34,7 +33,11 @@ public class VehiculoDAO implements IVehiculo {
 		}catch(ConstraintViolationException cve) {
 			cve.printStackTrace();
 		}
-		
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return true;
 	}
 
@@ -45,7 +48,11 @@ public class VehiculoDAO implements IVehiculo {
 		session.update(v); // Update Vehiculo
 		session.beginTransaction().commit();// commit del Update 
 		session.close();
-		
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return true;
 	}
 
@@ -58,6 +65,11 @@ public class VehiculoDAO implements IVehiculo {
 		System.out.println("El vehiculo ha sido eliminado");
 		session.getTransaction().commit();
 		session.close();
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return true;
 	}
 
@@ -67,7 +79,11 @@ public class VehiculoDAO implements IVehiculo {
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		List<VehiculoPOJO>listavehiculos=session.createQuery("from vehiculos").list();
-		
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return listavehiculos;
 		
 	}
@@ -82,6 +98,11 @@ public class VehiculoDAO implements IVehiculo {
 				return listavehiculos.get(i);
 			}
 		}
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return null;
 	}
 

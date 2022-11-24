@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 
 import dto.RepuestosDTO;
@@ -11,6 +12,8 @@ import utils.HibernateUtils;
 
 public class RepuestosDAO implements IRepuestos {
 
+	Logger logger = Logger.getLogger(RepuestosDAO.class);
+	
 	@Override
 	public boolean addRepuestos(RepuestosPOJO r) {
 		//Creas sesion 
@@ -23,6 +26,11 @@ public class RepuestosDAO implements IRepuestos {
 		session.getTransaction().commit();
 		//cierra sesion
 		session.close();
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return true;
 
 	}
@@ -36,6 +44,11 @@ public class RepuestosDAO implements IRepuestos {
 		System.out.println("El repuesto ha sido eliminado");
 		session.getTransaction().commit();
 		session.close();
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return true;
 	}
 
@@ -45,7 +58,11 @@ public class RepuestosDAO implements IRepuestos {
 		session.update(r); // Update Vehiculo
 		session.beginTransaction().commit();// commit del Update 
 		session.close();
-		
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return true;
 	}
 
@@ -58,7 +75,11 @@ public class RepuestosDAO implements IRepuestos {
 			System.out.println(repuestos);
 			
 		}
-		
+        logger.info("Esto es un mensaje info");
+        logger.debug("Esto es un mensaje info");
+        logger.warn("Esto es un mensaje info");
+        logger.error("Esto es un mensaje info");
+        logger.fatal("Esto es un mensaje info");
 		return listarepuesto;
 	}
 
