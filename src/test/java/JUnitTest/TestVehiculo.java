@@ -14,7 +14,7 @@ class TestVehiculo {
 
 	@Test
 	public void updateVehiculo() {
-		VehiculoPOJO vPojo = new VehiculoPOJO("1505FRT", "PEUGOT", "X3");
+		VehiculoPOJO vPojo = new VehiculoPOJO("1505FRT", "PEUGOT", "306");
 		VehiculoDAO vDAO = new VehiculoDAO();
 		Assert.assertTrue(vDAO.updateVehiculo(vPojo));
 	}
