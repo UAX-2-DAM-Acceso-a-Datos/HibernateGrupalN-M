@@ -26,7 +26,7 @@ private String nombre;
 @Column(name="descripcion")
 private String descripcion;
 
-@ManyToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL)
+@ManyToMany(fetch=FetchType.LAZY,cascade = {CascadeType.MERGE.PERSIST})
 @JoinTable(name = "vehiculos_repuestos", joinColumns = {@JoinColumn(name="id")}, 
 inverseJoinColumns = {@JoinColumn(name="matricula")})
 private List<VehiculoPOJO>	vehiculos;
