@@ -99,7 +99,7 @@ public class RepuestosPOJO {
 	@Override
 	public String toString() {
 		return "RepuestosPOJO [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", Vehiculo="
-				+ vehiculos + "]";
+				+ "]";
 	}
 
 }

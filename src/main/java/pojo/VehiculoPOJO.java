@@ -92,7 +92,7 @@ public class VehiculoPOJO {
 	@Override
 	public String toString() {
 		return "VehiculoPOJO [matricula=" + matricula + ", modelo=" + modelo + ", marca=" + marca + ", repuestos="
-				+ repuestos + "]";
+				+  "]";
 	}
 
 }

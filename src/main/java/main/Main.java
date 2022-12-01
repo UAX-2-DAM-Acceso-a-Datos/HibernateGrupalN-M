@@ -14,7 +14,8 @@ public class Main {
 
 		//Creamos los repuestos
 		RepuestosPOJO repuestoGenerico = new RepuestosPOJO();
-
+		repuestoGenerico.setNombre("Repuesto Generico");
+		repuestoGenerico.setDescripcion("Esto es un repuesto Generico");
 		
 		RepuestosPOJO repuestoCoche = new RepuestosPOJO();
 		repuestoCoche.setNombre("Volante Mazda");
