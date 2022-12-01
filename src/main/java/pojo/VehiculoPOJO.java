@@ -1,44 +1,57 @@
 package pojo;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.NotBlank;
 
-
-@Table(name = "vehiculos")
 @Entity(name = "vehiculos")
+@Table(name = "vehiculos")
 public class VehiculoPOJO {
+
+	private String matricula;
 
 	@Id
 	@Column(name = "matricula")
-	@Pattern(regexp="(?i)^\\d{4}?[ -]*([A-Z]{3})$")
-	private String matricula;
-	
+	@Pattern(regexp = "(?i)^\\d{4}?[ -]*([A-Z]{3})$")
+	public String getMatricula() {
+		return matricula;
+	}
+
 	@Column(name = "modelo")
 	@NotBlank
 	private String modelo;
-	
+
 	@Column(name = "marca")
 	@NotNull
 	private String marca;
-	
-	@ManyToMany(mappedBy = "vehiculos")
-	private List<RepuestosPOJO> repuestos;
-	
-	public VehiculoPOJO() {
-		
+
+
+
+	@ManyToMany(mappedBy = "vehiculos", fetch = FetchType.LAZY)
+	public List<RepuestosPOJO> getRepuestos() {
+		return repuestos;
 	}
+
+	public List<RepuestosPOJO> repuestos = new ArrayList<RepuestosPOJO>();
 	
+	public void addRepuestos(RepuestosPOJO repuesto) {
+		this.repuestos.add(repuesto);
+	}
+
+	public VehiculoPOJO() {
+
+	}
+
 	public VehiculoPOJO(String matricula, String marca, String modelo, List<RepuestosPOJO> repuestos) {
 		this.matricula = matricula;
 		this.marca = marca;
@@ -50,10 +63,6 @@ public class VehiculoPOJO {
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
-	}
-
-	public String getMatricula() {
-		return matricula;
 	}
 
 	public void setMatricula(String matricula) {
@@ -76,10 +85,6 @@ public class VehiculoPOJO {
 		this.marca = marca;
 	}
 
-	public List<RepuestosPOJO> getRepuestos() {
-		return repuestos;
-	}
-
 	public void setRepuestos(List<RepuestosPOJO> repuestos) {
 		this.repuestos = repuestos;
 	}
@@ -89,5 +94,5 @@ public class VehiculoPOJO {
 		return "VehiculoPOJO [matricula=" + matricula + ", modelo=" + modelo + ", marca=" + marca + ", repuestos="
 				+ repuestos + "]";
 	}
-	
+
 }

@@ -78,15 +78,6 @@ public class RepuestosDAO implements IRepuestos {
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		List<RepuestosPOJO>listarepuesto=session.createQuery("from cuentas").list();
-		for (RepuestosPOJO repuestos : listarepuesto) {
-			System.out.println(repuestos);
-			
-		}
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
 		return listarepuesto;
 	}
 
