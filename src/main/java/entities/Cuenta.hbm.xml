@@ -3,7 +3,10 @@
 "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="entities.xxxx">
-		
+	<class name="entities.VehiculoPOJO">
+		<id name="matricula" column="matricula"/>
+		<property name="modelo" type="string" column="modelo"/>
+		<property name="marca" type="string" column="marca"/>
+		<property name="repuestos" type="string" column="repuestos"/>
 	</class>
 </hibernate-mapping>
