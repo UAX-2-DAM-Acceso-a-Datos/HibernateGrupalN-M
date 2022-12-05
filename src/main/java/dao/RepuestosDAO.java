@@ -75,9 +75,12 @@ public class RepuestosDAO implements IRepuestos {
 
 	@Override
 	public List<RepuestosPOJO> listarRespuestos() {
+		logger.info("Entras al metodo de Listar Repuesto");
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
+		logger.info("Sales del metodo y cierras la conexion");
 		List<RepuestosPOJO>listarepuesto=session.createQuery("from repuestos").list();
+		
 		return listarepuesto;
 	}
 

@@ -84,34 +84,27 @@ public class VehiculoDAO implements IVehiculo {
 
 	@Override
 	public List<VehiculoPOJO> listVehiculo() {
-		
+		logger.info("Entras al metodo de Listar Vehiculo");
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
+		logger.info("Sales del metodo y cierras la conexion");
 		List<VehiculoPOJO>listavehiculos=session.createQuery("from vehiculos").list();
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
 		return listavehiculos;
 		
 	}
 
 	@Override
 	public VehiculoPOJO listarRepuestoMatricula(String matricula) {
+		logger.info("Entras al metodo de Listar coche Vehiculo");
 		Session session= HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
+		logger.info("Sales del metodo y cierras la conexion");
 		List<VehiculoPOJO>listavehiculos=session.createQuery("from vehiculos").list();
 		for (int i = 0; i < listavehiculos.size(); i++) {
 			if (listavehiculos.get(i).getMatricula().equals(matricula)) {
 				return listavehiculos.get(i);
 			}
 		}
-        logger.info("Esto es un mensaje info");
-        logger.debug("Esto es un mensaje info");
-        logger.warn("Esto es un mensaje info");
-        logger.error("Esto es un mensaje info");
-        logger.fatal("Esto es un mensaje info");
 		return null;
 	}
 
